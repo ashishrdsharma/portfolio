@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #061012;
+  color: #fff;
+}
+
+/* Tabbed one-page UI: prevent page scroll + hide scrollbar */
+html,
+body,
+#root {
+  height: 100%;
+  overflow: hidden;
+}
+
+* {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/old Edge */
+}
+
+*::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+/* ========================================
+   UI DESIGN SYSTEM - REUSABLE UTILITIES
+   ======================================== */
+
+/* Glass Card Effect */
+.ui-card {
+  @apply rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl transition-all duration-300;
+}
+
+/* Card Hover Effects */
+.ui-card-hover {
+  @apply hover:scale-[1.02] hover:shadow-xl hover:shadow-yellow-400/10 hover:border-white/20;
+}
+
+.ui-card-glow {
+  @apply hover:shadow-lg hover:shadow-yellow-400/20 hover:border-yellow-400/40;
+}
+
+.ui-card-scale {
+  @apply hover:scale-[1.03];
+}
+
+/* Badge Pill Style */
+.ui-badge {
+  @apply inline-block rounded-full border font-medium transition-colors duration-300;
+}
+
+/* Accent Color (Yellow Theme) */
+.ui-accent {
+  @apply text-yellow-400;
+}
+
+.ui-accent-bg {
+  @apply bg-yellow-400/20 border-yellow-400/40 text-yellow-300;
+}
+
+/* Dark Theme Colors */
+.ui-dark-bg {
+  @apply bg-[#061012];
+}
+
+.ui-darker-bg {
+  @apply bg-[#07161a];
+}
+
+/* Legacy Support */
+.card-glow {
+  @apply border border-white/10 bg-white/5 backdrop-blur-xl;
+}
+
+/* Utility: Hide Scrollbar */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}
