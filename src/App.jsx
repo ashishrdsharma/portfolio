@@ -10,6 +10,8 @@ import Education from './components/Education';
 import Experience from './components/Experience';
 import Contact from './components/Contact';
 import React, { useState } from 'react';
+import LeadModal from './components/LeadModal';
+import StickyWhatsApp from './components/StickyWhatsApp';
 
 export default function App() {
   const tabs = [
@@ -61,6 +63,9 @@ export default function App() {
           </div>
         </main>
       </div>
+
+      <LeadModal />
+      <StickyWhatsApp />
     </div>
   );
 }

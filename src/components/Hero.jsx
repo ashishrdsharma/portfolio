@@ -76,8 +76,8 @@ export default function Hero({ setActiveTab }) {
           animate={{ opacity: 1, y: 0 }}
           className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl max-w-[900px]"
         >
-          Crafting Scalable Digital Products{' '}
-          <span className="text-yellow-400">that Drive Real Impact</span>
+          I build fast, high-converting websites{' '}
+          <span className="text-yellow-400">for startups & businesses</span>
         </motion.h1>
 
         {/* Description */}
