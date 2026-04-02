@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Button from "./ui/Button";
 
 export default function LeadModal() {
   const [email, setEmail] = useState("");
@@ -48,25 +49,27 @@ export default function LeadModal() {
         <input
           type="email"
           placeholder="Enter your email"
-          className="mt-4 w-full p-3 rounded bg-black/40 border border-white/10 text-white outline-none focus:border-yellow-400 transition"
+          className="mt-4 w-full p-3 rounded bg-black/40 border border-white/10 text-white outline-none focus:border-primary transition"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
 
         <div className="mt-4 flex gap-3">
-          <button
+          <Button
+            variant="primary"
             onClick={handleSubmit}
-            className="flex-1 py-2 bg-yellow-400 text-black rounded font-semibold hover:bg-yellow-300 transition"
+            className="flex-1"
           >
             Submit
-          </button>
+          </Button>
 
-          <button
+          <Button
+            variant="outline"
             onClick={() => setIsOpen(false)}
-            className="flex-1 py-2 border border-white/20 text-white rounded hover:border-yellow-400 transition"
+            className="flex-1 border-white/20"
           >
             Close
-          </button>
+          </Button>
         </div>
       </div>
     </div>

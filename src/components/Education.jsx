@@ -21,7 +21,7 @@ export default function Education() {
                         <h2 className="text-base md:text-lg font-semibold text-white leading-tight">
                             Veer Bahadur Singh Purvanchal University
                         </h2>
-                        <p className="text-sm md:text-base font-medium text-yellow-400 mt-1">
+                        <p className="text-sm md:text-base font-medium text-primary mt-1">
                             Bachelor of Computer Application (BCA)
                         </p>
                     </div>
@@ -83,7 +83,7 @@ export default function Education() {
                                     href="https://www.facebook.com/Vbspuofficial"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-yellow-400 hover:text-black transition"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary hover:text-black transition"
                                 >
                                     <FiFacebook size={16} />
                                 </a>
@@ -93,7 +93,7 @@ export default function Education() {
                                     href="https://www.linkedin.com/company/veer-bahadur-singh-purvanchal-university-jaunpur-official/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-yellow-400 hover:text-black transition"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary hover:text-black transition"
                                 >
                                     <FiLinkedin size={16} />
                                 </a>
@@ -103,7 +103,7 @@ export default function Education() {
                                     href="https://www.instagram.com/vbspu.jaunpur/"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-yellow-400 hover:text-black transition"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary hover:text-black transition"
                                 >
                                     <FiInstagram size={16} />
                                 </a>
@@ -113,7 +113,7 @@ export default function Education() {
                                     href="https://www.youtube.com/c/VBSPurvanchalUniversityJaunpurUttarPradesh"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-yellow-400 hover:text-black transition"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary hover:text-black transition"
                                 >
                                     <FiYoutube size={16} />
                                 </a>
@@ -123,7 +123,7 @@ export default function Education() {
                                     href="https://x.com/vbspu_official"
                                     target="_blank"
                                     rel="noopener noreferrer"
-                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-yellow-400 hover:text-black transition"
+                                    className="w-9 h-9 flex items-center justify-center rounded-full border border-white/10 bg-white/5 hover:bg-primary hover:text-black transition"
                                 >
                                     <FiTwitter size={16} />
                                 </a>
@@ -139,8 +139,8 @@ export default function Education() {
                 {/* ORACLE */}
                 <motion.div whileHover={{ y: -5 }}>
                     <Card className="overflow-hidden p-0 border border-white/10 bg-white/5">
-                        <div className="bg-yellow-400/20 flex items-center justify-center h-20">
-                            <span className="text-yellow-400 font-bold">ORACLE</span>
+                        <div className="bg-primary/20 flex items-center justify-center h-20">
+                            <span className="text-primary font-bold">ORACLE</span>
                         </div>
                         <div className="p-3 text-center">
                             <h4 className="text-sm font-semibold">Oracle Certification</h4>

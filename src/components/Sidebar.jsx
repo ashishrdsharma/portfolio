@@ -8,6 +8,7 @@ import {
   FiBriefcase,
 } from 'react-icons/fi';
 import { FaGraduationCap, FaCode } from 'react-icons/fa';
+import Button from './ui/Button';
 
 export default function Sidebar({ activeTab, onChangeTab, items }) {
 
@@ -50,19 +51,18 @@ export default function Sidebar({ activeTab, onChangeTab, items }) {
           return (
             <div key={tab} className="relative flex items-center justify-center group">
               <button
-                type="button"
                 onClick={() => onChangeTab(tab)}
-                className={`flex h-12 w-12 items-center justify-center rounded-xl border transition-all duration-300 ${
+                className={`flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 ${
                   isActive
-                    ? 'border-yellow-400 bg-yellow-400 text-slate-900 shadow-[0_8px_20px_rgba(250,204,21,0.35)]'
-                    : 'border-white/10 bg-white/5 text-slate-300 hover:border-white/20 hover:bg-white/10 hover:text-white'
+                    ? 'bg-primary text-black shadow-lg shadow-primary/35'
+                    : 'bg-white/5 text-white hover:bg-primary/10 hover:text-primary'
                 }`}
               >
-                <Icon size={20} />
+                <Icon size={20} className="text-current" />
               </button>
 
               {/* Tooltip - hidden on mobile */}
-              <span className="pointer-events-none absolute left-full ml-3 hidden rounded-xl border border-yellow-300 bg-yellow-400 px-3 py-1 text-xs font-bold text-slate-900 shadow-lg opacity-0 group-hover:opacity-100 md:inline-flex transition">
+              <span className="pointer-events-none absolute left-full ml-3 hidden rounded-xl border border-white/20 bg-primary px-3 py-1 text-xs font-bold text-white shadow-lg opacity-0 group-hover:opacity-100 md:inline-flex transition">
                 {label}
               </span>
             </div>

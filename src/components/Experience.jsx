@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { FiMapPin, FiBriefcase, FiHome } from 'react-icons/fi';
 import {
     FaLinkedin,
@@ -270,35 +270,35 @@ export default function Experience() {
 
                                                 {exp.socials?.linkedin && (
                                                     <a href={exp.socials.linkedin} target="_blank" rel="noreferrer"
-                                                        className="text-slate-400 hover:text-blue-400 transition">
+                                                        className="text-slate-400 hover:text-primary transition-all duration-300">
                                                         <FaLinkedin size={20} />
                                                     </a>
                                                 )}
 
                                                 {exp.socials?.instagram && (
                                                     <a href={exp.socials.instagram} target="_blank" rel="noreferrer"
-                                                        className="text-slate-400 hover:text-pink-400 transition">
+                                                        className="text-slate-400 hover:text-primary transition-all duration-300">
                                                         <FaInstagram size={20} />
                                                     </a>
                                                 )}
 
                                                 {exp.socials?.facebook && (
                                                     <a href={exp.socials.facebook} target="_blank" rel="noreferrer"
-                                                        className="text-slate-400 hover:text-blue-500 transition">
+                                                        className="text-slate-400 hover:text-primary transition-all duration-300">
                                                         <FaFacebook size={20} />
                                                     </a>
                                                 )}
 
                                                 {exp.socials?.youtube && (
                                                     <a href={exp.socials.youtube} target="_blank" rel="noreferrer"
-                                                        className="text-slate-400 hover:text-red-500 transition">
+                                                        className="text-slate-400 hover:text-primary transition-all duration-300">
                                                         <FaYoutube size={20} />
                                                     </a>
                                                 )}
 
                                                 {exp.socials?.twitter && (
                                                     <a href={exp.socials.twitter} target="_blank" rel="noreferrer"
-                                                        className="text-slate-400 hover:text-white transition">
+                                                        className="text-slate-400 hover:text-primary transition-all duration-300">
                                                         <FaXTwitter size={20} />
                                                     </a>
                                                 )}
@@ -315,7 +315,7 @@ export default function Experience() {
                                                     href={exp.socials.website}
                                                     target="_blank"
                                                     rel="noreferrer"
-                                                    className="flex items-center gap-1 hover:text-green-400 transition hover:scale-105"
+                                                    className="flex items-center gap-1 text-slate-400 hover:text-primary transition-all duration-300 hover:scale-105"
                                                 >
                                                     {/* <FaGlobe className="text-[12px]" /> */}
                                                     {/* {exp.socials.website.replace(/^https?:\/\//, '')} */}
@@ -333,7 +333,7 @@ export default function Experience() {
                                 <ul className="space-y-2 mb-4">
                                     {exp.points.map((p, i) => (
                                         <li key={i} className="flex gap-2 text-sm text-slate-400">
-                                            <span className="w-2 h-2 bg-yellow-400 rounded-full mt-1 flex-shrink-0" />
+                                            <span className="w-2 h-2 bg-primary rounded-full mt-1 flex-shrink-0" />
                                             {p}
                                         </li>
                                     ))}

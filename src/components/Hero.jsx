@@ -2,6 +2,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import CTA from './CTA';
 import Badge from './ui/Badge';
+import Button from './ui/Button';
+import { useTheme } from '../context/ThemeContext';
 
 const AVATARS = [
   'https://randomuser.me/api/portraits/women/44.jpg',
@@ -15,7 +17,7 @@ function CircularRotatedBadge() {
     <div className="relative h-full w-full rounded-full border border-white/15 bg-transparent shadow-2xl">
       <svg
         viewBox="0 0 200 200"
-        className="absolute inset-0 h-full w-full rotate-[-20deg] text-yellow-400/90"
+        className="absolute inset-0 h-full w-full rotate-[-20deg] text-primary/90"
       >
         <defs>
           <path
@@ -34,7 +36,7 @@ function CircularRotatedBadge() {
         <div className="grid h-10 w-10 place-items-center rounded-full border border-white/15 bg-white/5">
           <svg
             viewBox="0 0 24 24"
-            className="h-4 w-4 text-yellow-400"
+            className="h-4 w-4 text-primary"
             fill="none"
             stroke="currentColor"
             strokeWidth="2"
@@ -49,16 +51,57 @@ function CircularRotatedBadge() {
 }
 
 export default function Hero({ setActiveTab }) {
+  const { theme, toggleTheme, setPrimaryColor } = useTheme();
+  
+  const PRESET_COLORS = [
+    { name: 'Yellow', value: '250 204 21', hex: '#facc15' },
+    { name: 'Blue', value: '59 130 246', hex: '#3b82f6' },
+    { name: 'Green', value: '34 197 94', hex: '#22c55e' },
+    { name: 'Red', value: '239 68 68', hex: '#ef4444' },
+    { name: 'Purple', value: '168 85 247', hex: '#a855f7' },
+  ];
+
   return (
     <section id="home" className="relative py-0">
 
+      {/* THEME CONTROLS PANEL */}
+      <div className="absolute right-4 top-4 z-50 flex items-center gap-3 rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur-md">
+        <button
+          onClick={() => {
+            console.log("Toggling theme from", theme);
+            toggleTheme();
+          }}
+          className="grid h-8 w-8 place-items-center rounded-full bg-white/10 text-slate-200 transition-all hover:bg-white/20 hover:text-white"
+          title="Toggle Theme"
+        >
+          {theme === 'dark' ? '☀️' : '🌙'}
+        </button>
+        <div className="h-6 w-[1px] bg-white/20" />
+        <div className="flex items-center gap-2">
+          {PRESET_COLORS.map((c) => (
+            <button
+              key={c.name}
+              onClick={() => {
+                console.log("Setting primary color to:", c.value);
+                setPrimaryColor(c.value);
+              }}
+              className="relative h-6 w-6 rounded-full border-2 border-white/20 transition-transform hover:scale-110 active:scale-95 flex items-center justify-center group"
+              style={{ backgroundColor: c.hex }}
+              title={c.name}
+            >
+              <span className="opacity-0 group-focus:opacity-100 group-active:opacity-100 w-2 h-2 bg-white rounded-full transition-opacity"></span>
+            </button>
+          ))}
+        </div>
+      </div>
+
       {/* BG EFFECT */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute left-1/2 top-[-180px] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-yellow-400/20 blur-2xl opacity-40" />
+        <div className="absolute left-1/2 top-[-180px] h-[420px] w-[420px] -translate-x-1/2 rounded-full bg-primary/20 blur-2xl opacity-40" />
       </div>
 
       {/* ✅ WIDTH FIXED */}
-      <div className="max-w-[1100px] mx-auto px-4">
+      <div className="max-w-[1100px] mx-auto px-4 pt-16">
 
         {/* Intro */}
         <motion.p
@@ -67,7 +110,7 @@ export default function Hero({ setActiveTab }) {
           transition={{ duration: 0.5 }}
           className="flex items-center gap-3 text-sm text-slate-300"
         >
-          👋 Hi, I'm<span className="text-yellow-400 font-semibold"> Ashish,</span><span>Frontend Developer</span>
+          👋 Hi, I'm<span className="text-primary font-semibold"> Ashish,</span><span>Frontend Developer</span>
         </motion.p>
 
         {/* Heading */}
@@ -77,7 +120,7 @@ export default function Hero({ setActiveTab }) {
           className="mt-2 text-3xl font-extrabold leading-tight sm:text-4xl lg:text-5xl max-w-[900px]"
         >
           I build fast, high-converting websites{' '}
-          <span className="text-yellow-400">for startups & businesses</span>
+          <span className="text-primary">for startups & businesses</span>
         </motion.h1>
 
         {/* Description */}
@@ -101,28 +144,6 @@ export default function Hero({ setActiveTab }) {
           <Badge variant="outline">✔ 10+ Projects Delivered</Badge>
           <Badge variant="outline">✔ SEO + Performance Optimized</Badge>
         </motion.div>
-
-        {/* CTA BUTTONS */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 35 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1.2 }}
-          className="mt-8 flex items-center gap-4 flex-wrap"
-        >
-          <button
-            onClick={() => setActiveTab && setActiveTab('contact')}
-            className="px-6 py-3 rounded-full bg-yellow-400 text-black font-bold text-sm hover:scale-105 transition shadow-lg"
-          >
-            Hire Me 🚀
-          </button>
-
-          <a
-            href="#projects"
-            className="px-6 py-3 rounded-full border border-white/20 text-white text-sm hover:bg-white/10 transition"
-          >
-            View Projects
-          </a>
-        </motion.div> */}
 
         {/* BADGE + REVIEWS */}
         <motion.div
@@ -156,13 +177,13 @@ export default function Hero({ setActiveTab }) {
             </div>
 
             <div className="flex flex-col leading-tight">
-              <span className="inline-block w-fit rounded-full bg-yellow-400 px-3 py-[2px] text-xs font-bold text-black">
+              <span className="inline-block w-fit rounded-full bg-primary px-3 py-[2px] text-xs font-bold text-black">
                 2K+
               </span>
               <span className="text-xs text-slate-300 mt-1">
                 Positive Reviews
               </span>
-              <span className="text-[10px] text-yellow-400">
+              <span className="text-[10px] text-primary">
                 (4.90 Rating)
               </span>
             </div>

@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { FaReact, FaAngular, FaMobile, FaDesktop, FaSearch } from 'react-icons/fa';
 import CTA from './CTA';
 import Card from './ui/Card';
+import Button from './ui/Button';
 
 const tabs = ['ALL', 'WEB', 'MOBILE', 'FULLSTACK', 'DIGITAL MARKETING'];
 
@@ -78,19 +79,20 @@ export default function Projects() {
       {/* 🔥 TABS */}
       <div className="flex gap-2 overflow-x-auto scrollbar-hide bg-white/5 rounded-xl p-1 sm:gap-0 sm:overflow-hidden sm:p-0">
         {tabs.map((tab) => (
-          <button
+          <Button
             key={tab}
+            variant={activeTab === tab ? "primary" : "ghost"}
             onClick={() => setActiveTab(tab)}
-            className="min-w-max px-4 py-2.5 text-xs sm:text-sm flex-1 sm:flex-1 relative z-10 min-h-[40px]"
+            className="min-w-max px-4 py-2.5 text-xs sm:text-sm flex-1 sm:flex-1 relative z-10 min-h-[40px] border-transparent"
           >
             {tab}
             {activeTab === tab && (
               <motion.div
                 layoutId="tab-project"
-                className="absolute inset-0 bg-white/10 rounded"
+                className="absolute inset-0 bg-white/10 rounded-full"
               />
             )}
-          </button>
+          </Button>
         ))}
       </div>
 
@@ -120,7 +122,7 @@ export default function Projects() {
                   </span>
                 </div>
 
-                <div className="text-2xl mb-2 text-yellow-400">
+                <div className="text-2xl mb-2 text-primary">
                   {item.icon}
                 </div>
 

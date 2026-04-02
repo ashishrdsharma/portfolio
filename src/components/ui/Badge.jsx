@@ -19,7 +19,7 @@ export default function Badge({
   
   const variantClass =
     variant === 'accent'
-      ? 'bg-yellow-400/20 border-yellow-400/50 text-yellow-300'
+      ? 'bg-primary/20 border-primary/50 text-primary'
       : variant === 'default'
         ? 'bg-white/10 border-white/20 text-slate-200'
         : 'bg-white/5 border-white/10 text-slate-300';

@@ -31,7 +31,7 @@ export default function App() {
       {/* Background */}
       <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top_left,rgba(36,120,92,0.35),transparent_45%),radial-gradient(circle_at_bottom_right,rgba(6,20,23,0.9),transparent_50%),linear-gradient(180deg,#061012_0%,#07161a_100%)]" />
       <div className="absolute inset-0 -z-10 bg-[repeating-linear-gradient(135deg,rgba(255,255,255,0.045)_0px,rgba(255,255,255,0.045)_1px,transparent_1px,transparent_10px)] opacity-30" />
-      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgba(250,204,21,0.12)_0%,transparent_55%),radial-gradient(circle_at_70%_70%,rgba(59,130,246,0.08)_0%,transparent_45%)]" />
+      <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_30%_20%,rgb(var(--primary)/0.12)_0%,transparent_55%),radial-gradient(circle_at_70%_70%,rgba(59,130,246,0.08)_0%,transparent_45%)]" />
 
       {/* MAIN LAYOUT */}
       <div className="flex w-full h-full overflow-hidden">

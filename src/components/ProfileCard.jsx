@@ -1,5 +1,6 @@
 import React from 'react';
 import Card from './ui/Card';
+import Button from './ui/Button';
 
 import {
   FiLinkedin,
@@ -65,7 +66,7 @@ export default function ProfileCard() {
 
       {/* Image */}
       <div className="flex justify-center">
-        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-yellow-400/30 shadow-lg">
+        <div className="w-40 h-40 rounded-full overflow-hidden border-4 border-primary/30 shadow-lg">
           <img
             src={profile.image}
             alt={profile.name}
@@ -78,7 +79,7 @@ export default function ProfileCard() {
       <div className="mt-2 flex items-center justify-center gap-2">
         <h2 className="text-2xl font-extrabold text-white">
           {firstName}{" "}
-          <span className="text-yellow-400">{lastName}</span>
+          <span className="text-primary">{lastName}</span>
         </h2>
 
         <FiCheckCircle className="h-5 w-5 text-blue-400 animate-pulse" />
@@ -86,7 +87,7 @@ export default function ProfileCard() {
 
       {/* Role */}
       <div className="mt-1">
-        <span className="inline-block rounded-full bg-yellow-400/20 px-4 py-1 text-xs font-semibold text-yellow-400 border border-yellow-400/30">
+        <span className="inline-block rounded-full bg-primary/20 px-4 py-1 text-xs font-semibold text-primary border border-primary/30">
           {profile.role}
         </span>
       </div>
@@ -101,30 +102,30 @@ export default function ProfileCard() {
         {profile.social.map(({ label, link, active }) => {
           const Icon = getIcon(label);
           return (
-            <a
+            <Button
+              as="a"
               key={label}
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className={`grid h-10 w-10 place-items-center rounded-full border transition-all hover:scale-110 ${active
-                  ? 'bg-yellow-400 text-black border-yellow-400'
-                  : 'bg-white/5 text-slate-300 border-white/10 hover:bg-yellow-400 hover:text-black'
-                }`}
+              variant={active ? "primary" : "ghost"}
+              className={`!h-10 !w-10 !p-0 ${active ? 'border-primary' : 'border border-white/10'}`}
             >
               <Icon className="h-4 w-4" />
-            </a>
+            </Button>
           );
         })}
       </div>
 
-      {/* Button */}
-      <a
+      <Button
+        as="a"
+        variant="primary"
         href="/Ashish_Resume.pdf"
         download
-        className="mt-4 mb-8 inline-flex w-full items-center justify-center gap-2 rounded-full bg-yellow-400 px-6 py-3 text-sm font-bold text-black hover:scale-105 transition-all"
+        className="mt-4 mb-8 w-full uppercase tracking-wide hover:scale-105 shadow-lg shadow-primary/30"
       >
         DOWNLOAD CV
-      </a>
+      </Button>
     </Card>
   );
 }
